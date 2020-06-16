@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_totalTimer"
+        android:icon="@drawable/ic_timer_filled"
+        android:title="전체 타이머" />
+
+    <item
+        android:id="@+id/navigation_subjectTimer"
+        android:icon="@drawable/ic_sandclock_filled"
+        android:title="과목별 타이머" />
+
+    <item
+        android:id="@+id/navigation_record"
+        android:icon="@drawable/ic_folder_filled"
+        android:title="기록" />
+
+</menu>
