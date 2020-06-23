@@ -19,6 +19,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.examtimer1.DBHelper_tt;
+import com.examtimer1.MainActivity;
 import com.examtimer1.examtimer.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -50,7 +51,7 @@ public class TotalTimer_breaktime4 extends AppCompatActivity {
         setContentView(R.layout.activity_tt_breaktime4);
 
         mInterstitialAd = new InterstitialAd(TotalTimer_breaktime4.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
@@ -60,7 +61,7 @@ public class TotalTimer_breaktime4 extends AppCompatActivity {
         btn_stop_save=findViewById(R.id.btn_stop_save_breaktime4);
         btn_reset=findViewById(R.id.btn_reset_breaktime4);
         btn_next_Korean=findViewById(R.id.btn_next_breaktime4);
-        btn_totalTimer_save_end_nofl=findViewById(R.id.btn_totalTimer_save_end_nofl);
+        btn_totalTimer_save_end_nofl=findViewById(R.id.btn_save_end_breaktime4);
         TextView_info_message=findViewById(R.id.TextView_info_message);
         Imagebtn_info=findViewById(R.id.Imagebtn_info);
 
@@ -117,7 +118,6 @@ public class TotalTimer_breaktime4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TotalTimer_breaktime4.this, TotalTimer_foreignLanguage.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 intent.putExtra("time_science2", gintent.getExtras().getString("time_science2"));
                 intent.putExtra("time_science1", gintent.getExtras().getString("time_science1"));
                 intent.putExtra("time_history", gintent.getExtras().getString("time_history"));
@@ -183,7 +183,9 @@ public class TotalTimer_breaktime4 extends AppCompatActivity {
                         }
                         Toast toast=Toast.makeText(TotalTimer_breaktime4.this, "성공적으로 저장되었습니다.", Toast.LENGTH_SHORT);
                         toast.show();
-                        TotalTimer_breaktime4.super.onBackPressed();
+                        Intent tempIntent=new Intent(TotalTimer_breaktime4.this, MainActivity.class);
+                        tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tempIntent);
                         if (mInterstitialAd.isLoaded()) {
                             mInterstitialAd.show();
                         }
@@ -248,8 +250,9 @@ public class TotalTimer_breaktime4 extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                TotalTimer_breaktime4.super.onBackPressed();//뒤로가기
-            }
+                Intent tempIntent=new Intent(TotalTimer_breaktime4.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

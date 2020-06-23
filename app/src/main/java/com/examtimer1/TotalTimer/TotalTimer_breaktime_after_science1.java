@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.examtimer1.MainActivity;
 import com.examtimer1.examtimer.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -80,7 +81,6 @@ public class TotalTimer_breaktime_after_science1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TotalTimer_breaktime_after_science1.this, TotalTimer_science2.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 intent.putExtra("time_science1", gintent.getExtras().getString("time_science1"));
                 intent.putExtra("time_history", gintent.getExtras().getString("time_history"));
                 intent.putExtra("time_english", gintent.getExtras().getString("time_english"));
@@ -136,8 +136,9 @@ public class TotalTimer_breaktime_after_science1 extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                TotalTimer_breaktime_after_science1.super.onBackPressed();//뒤로가기
-            }
+                Intent tempIntent=new Intent(TotalTimer_breaktime_after_science1.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

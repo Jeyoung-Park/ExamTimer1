@@ -60,7 +60,7 @@ implements OnBackPressedListener {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TotalTimerFragment.this.getActivity(), TotalTimer_Korean.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
             }
         });

@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.examtimer1.DBHelper_tt;
+import com.examtimer1.MainActivity;
 import com.examtimer1.examtimer.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -34,11 +35,10 @@ import java.util.Date;
 import java.util.Locale;
 
 public class TotalTimer_foreignLanguage extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS=30*60*1000;
+    private static final long START_TIME_IN_MILLIS=40*60*1000;
 
     private TextView TextView_time_foreignLanguage_tt;
     private Button btn_start_pause, btn_reset, btn_stop_save, btn_save_end_foreignLanguage;
-    private ImageButton btn_next_foreignLanguage;
     private CountDownTimer mCountDownTimer;
     private boolean isTimerRunning;
     private long timeLeftInMillis=START_TIME_IN_MILLIS;
@@ -54,16 +54,16 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
         setContentView(R.layout.activity_foreignlanguage_tt);
 
         mInterstitialAd = new InterstitialAd(TotalTimer_foreignLanguage.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
 
         TextView_time_foreignLanguage_tt=findViewById(R.id.TextView_time_foreignLanguage_tt);
-        btn_start_pause=findViewById(R.id.btn_start_pause_tt_foreignLanguage);
-        btn_stop_save=findViewById(R.id.btn_stop_save_tt_foreignLanguage);
-        btn_reset=findViewById(R.id.btn_reset_tt_foreignLanguage);
-        btn_save_end_foreignLanguage=findViewById(R.id.btn_save_end_foreignLanguage);
+        btn_start_pause=findViewById(R.id.btn_start_pause_foreignLanguage_tt);
+        btn_stop_save=findViewById(R.id.btn_stop_save_foreignLanguage_tt);
+        btn_reset=findViewById(R.id.btn_reset_foreignLanguage_tt);
+        btn_save_end_foreignLanguage=findViewById(R.id.btn_save_end_foreignLanguage_tt);
 
         final Intent gintent=getIntent();
 
@@ -161,8 +161,9 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
 
                         Toast toast=Toast.makeText(TotalTimer_foreignLanguage.this, "성공적으로 저장되었습니다.", Toast.LENGTH_SHORT);
                         toast.show();
-                        TotalTimer_foreignLanguage.super.onBackPressed();
-
+                        Intent tempIntent=new Intent(TotalTimer_foreignLanguage.this, MainActivity.class);
+                        tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tempIntent);
                         if (mInterstitialAd.isLoaded()) {
                             mInterstitialAd.show();
                         }
@@ -227,8 +228,9 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                TotalTimer_foreignLanguage.super.onBackPressed();//뒤로가기
-            }
+                Intent tempIntent=new Intent(TotalTimer_foreignLanguage.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

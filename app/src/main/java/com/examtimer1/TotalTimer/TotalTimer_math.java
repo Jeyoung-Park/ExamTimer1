@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.examtimer1.MainActivity;
 import com.examtimer1.examtimer.R;
 
 import java.util.Locale;
@@ -80,7 +81,6 @@ public class TotalTimer_math extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(TotalTimer_math.this, TotalTimer_lunchtime.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 long timeSpentInMillis=START_TIME_IN_MILLIS-timeLeftInMillis;
                 int spentMinutes=(int)(timeSpentInMillis/1000)/60;
                 int spentSeconds=(int)(timeSpentInMillis/1000)%60;
@@ -140,8 +140,9 @@ public class TotalTimer_math extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                TotalTimer_math.super.onBackPressed();//뒤로가기
-            }
+                Intent tempIntent=new Intent(TotalTimer_math.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

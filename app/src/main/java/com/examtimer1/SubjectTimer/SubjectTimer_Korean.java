@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,16 +46,16 @@ public class SubjectTimer_Korean extends AppCompatActivity {
         setContentView(R.layout.activity_korean);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
 
-        TextView_time_korean=findViewById(R.id.TextView_time_korean);
-        btn_start_pause=findViewById(R.id.btn_start_pause);
-        btn_stop_save=findViewById(R.id.btn_stop_save);
-        btn_reset=findViewById(R.id.btn_reset);
-        btn_save_end=findViewById(R.id.btn_save_end);
+        TextView_time_korean=findViewById(R.id.TextView_time_Korean);
+        btn_start_pause=findViewById(R.id.btn_start_pause_Korean);
+        btn_stop_save=findViewById(R.id.btn_stop_save_Korean);
+        btn_reset=findViewById(R.id.btn_reset_Korean);
+        btn_save_end=findViewById(R.id.btn_save_end_Korean);
 
         btn_start_pause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +164,42 @@ public class SubjectTimer_Korean extends AppCompatActivity {
         });
 
         updateCountDownText();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("TAG", "onStop 호출");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("TAG", "onResume 호출");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("TAG", "onPause 호출");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("TAG", "onStart 호출");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("TAG", "onRestart 호출");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("TAG", "onDestroy 호출");
     }
 
     private void startTimer(){

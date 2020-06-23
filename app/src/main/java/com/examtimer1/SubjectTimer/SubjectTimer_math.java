@@ -48,7 +48,7 @@ public class SubjectTimer_math extends AppCompatActivity {
         setContentView(R.layout.activity_math);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기

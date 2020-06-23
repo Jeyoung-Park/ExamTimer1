@@ -44,16 +44,16 @@ public class SubjectTimer_foreignLanguage extends AppCompatActivity {
         setContentView(R.layout.activity_foreignlanguage);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
 
         TextView_time_fl=findViewById(R.id.TextView_time_foreignLanguage);
-        btn_start_pause=findViewById(R.id.btn_start_pause_fl);
-        btn_stop_save=findViewById(R.id.btn_stop_save_fl);
-        btn_reset=findViewById(R.id.btn_reset_fl);
-        btn_save_end=findViewById(R.id.btn_save_end_fl);
+        btn_start_pause=findViewById(R.id.btn_start_pause_foreignLanguage);
+        btn_stop_save=findViewById(R.id.btn_stop_save_foreignLanguage);
+        btn_reset=findViewById(R.id.btn_reset_foreignLanguage);
+        btn_save_end=findViewById(R.id.btn_save_end_foreignLanguage);
 
         btn_start_pause.setOnClickListener(new View.OnClickListener() {
             @Override

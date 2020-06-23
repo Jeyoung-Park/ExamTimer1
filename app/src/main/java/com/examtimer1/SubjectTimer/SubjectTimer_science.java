@@ -45,16 +45,16 @@ public class SubjectTimer_science extends AppCompatActivity {
         setContentView(R.layout.activity_science);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
 
         TextView_time_science=findViewById(R.id.TextView_time_science);
-        btn_start_pause=findViewById(R.id.btn_start_pause_English);
-        btn_stop_save=findViewById(R.id.btn_stop_save_English);
-        btn_reset=findViewById(R.id.btn_reset_English);
-        btn_save_end=findViewById(R.id.btn_save_end_English);
+        btn_start_pause=findViewById(R.id.btn_start_pause_science);
+        btn_stop_save=findViewById(R.id.btn_stop_save_science);
+        btn_reset=findViewById(R.id.btn_reset_science);
+        btn_save_end=findViewById(R.id.btn_save_end_science);
         btn_oneScience = findViewById(R.id.btn_oneScience);
         btn_threeScience=findViewById(R.id.btn_threeScience);
 
@@ -244,6 +244,10 @@ public class SubjectTimer_science extends AppCompatActivity {
                             Toast toast=Toast.makeText(SubjectTimer_science.this, "성공적으로 저장되었습니다.", Toast.LENGTH_SHORT);
                             toast.show();
                             SubjectTimer_science.super.onBackPressed();
+
+                            if (mInterstitialAd.isLoaded()) {
+                                mInterstitialAd.show();
+                            }
                         }
                     });
                     saveBuilder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
