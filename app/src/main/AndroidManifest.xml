@@ -84,5 +84,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="com.examtimer1.Record.Record_total_specific"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.examtimer1.TotalTimer.TotalTimer_analogClock"
+            android:screenOrientation="portrait"></activity>
     </application>
 </manifest>

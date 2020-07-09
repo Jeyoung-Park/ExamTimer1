@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.examtimer1.MainActivity;
 import com.examtimer1.OnBackPressedListener;
+import com.examtimer1.TotalTimer.TotalTimer_analogClock;
 import com.examtimer1.examtimer.R;
 import com.examtimer1.TotalTimer.TotalTimer_Korean;
 
@@ -30,7 +31,7 @@ implements OnBackPressedListener {
 
     private TotalTimerViewModel homeViewModel;
     private TextView TextView_Dday;
-    private Button btn_start_totalTimer;
+    private Button btn_start_totalTimer, btn_start_analogClock;
     private long backKeyPressedTime;
     private MainActivity activity;
 
@@ -53,6 +54,7 @@ implements OnBackPressedListener {
 
         TextView_Dday=root.findViewById(R.id.TextView_Dday);
         btn_start_totalTimer=root.findViewById(R.id.btn_start_totalTimer);
+        btn_start_analogClock=root.findViewById(R.id.btn_start_analogClock);
 
         TextView_Dday.setText(getDday());
 
@@ -61,6 +63,14 @@ implements OnBackPressedListener {
             public void onClick(View v) {
                 Intent intent=new Intent(TotalTimerFragment.this.getActivity(), TotalTimer_Korean.class);
 //                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(intent);
+            }
+        });
+
+        btn_start_analogClock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TotalTimerFragment.this.getActivity(), TotalTimer_analogClock.class);
                 startActivity(intent);
             }
         });
