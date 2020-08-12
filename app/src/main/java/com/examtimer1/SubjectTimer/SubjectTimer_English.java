@@ -2,22 +2,29 @@ package com.examtimer1.SubjectTimer;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.examtimer1.DBHelper;
+import com.examtimer1.MainActivity;
+import com.examtimer1.TotalTimer.TotalTimer_breaktime_after_history;
 import com.examtimer1.TotalTimer.TotalTimer_foreignLanguage;
 import com.examtimer1.examtimer.R;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
@@ -34,6 +41,7 @@ public class SubjectTimer_English extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
     private boolean isTimerRunning, isOnlyReading;
     private long timeLeftInMillis=START_TIME_IN_MILLIS;
+    private ImageButton btn_toClockMode;
 
     private SQLiteDatabase db;
     private DBHelper mDBHelper;
@@ -46,6 +54,7 @@ public class SubjectTimer_English extends AppCompatActivity {
         setContentView(R.layout.activity_english);
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
 
         TextView_time_English=findViewById(R.id.TextView_time_English);
         btn_start_pause=findViewById(R.id.btn_start_pause_English);
@@ -54,10 +63,50 @@ public class SubjectTimer_English extends AppCompatActivity {
         btn_save_end=findViewById(R.id.btn_save_end_English);
         btn_onlyReading=findViewById(R.id.btn_onlyReading);
         btn_wholeEnglish=findViewById(R.id.btn_wholeEnglish);
+        btn_toClockMode=findViewById(R.id.btn_English_toClockMode);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/10331737121");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
+
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdFailedToLoad(int i) {
+                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                Log.d("Tag_Ad", "광고 로드 완료");
+                super.onAdLoaded();
+            }
+        });
+
+        btn_toClockMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(SubjectTimer_English.this);
+                builder.setMessage("타이머가 진행 중인 상황에서 아날로그 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n아날로그 시계 모드로 전환하시겠습니까?");
+                builder.setPositiveButton("아날로그 시계모드로 전환", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Intent intent=new Intent(SubjectTimer_English.this, SubjectTimer_English_analog.class);
+                        startActivity(intent);
+                    }
+                });
+
+                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        });
 
         isOnlyReading=false;
 
@@ -271,7 +320,9 @@ public class SubjectTimer_English extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                SubjectTimer_English.super.onBackPressed();//뒤로가기
+                Intent tempIntent=new Intent(SubjectTimer_English.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);
             }
         });
 

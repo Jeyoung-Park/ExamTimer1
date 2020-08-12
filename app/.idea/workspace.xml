@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="thread" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -48,20 +47,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="BundleExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_XL_API_30" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-08T05:08:40.643Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\user\MyGitHub\ExamTimer1\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/EloquenceKey1.jks" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\MyGitHub\ExamTimer1\app\src\main\res\layout" />
+      <recent name="C:\Users\user\MyGitHub\ExamTimer1\app\src\main\res\drawable-v24" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.examtimer1.SubjectTimer" />
       <recent name="com.examtimer1" />
       <recent name="com.examtimer1.TotalTimer" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\MyGitHub\ExamTimer1\app\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\MyGitHub\ExamTimer1\app\src\main\res\drawable-v24" />
     </key>
   </component>
   <component name="RunManager">
@@ -138,34 +145,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1594184198576">
+    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1597197441414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594184198576" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593997975855">
+    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597197441414" />
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1597199074209">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593997975855" />
-    <state width="1877" height="194" key="GridCell.Tab.0.bottom" timestamp="1594264668704">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597199074209" />
+    <state width="1877" height="165" key="GridCell.Tab.0.bottom" timestamp="1597197502437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594264668704" />
-    <state width="1877" height="194" key="GridCell.Tab.0.center" timestamp="1594264668704">
+    <state width="1877" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597197502437" />
+    <state width="1877" height="165" key="GridCell.Tab.0.center" timestamp="1597197502437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="194" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594264668704" />
-    <state width="1877" height="194" key="GridCell.Tab.0.left" timestamp="1594264668703">
+    <state width="1877" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597197502437" />
+    <state width="1877" height="165" key="GridCell.Tab.0.left" timestamp="1597197502437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="194" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594264668703" />
-    <state width="1877" height="194" key="GridCell.Tab.0.right" timestamp="1594264668704">
+    <state width="1877" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597197502437" />
+    <state width="1877" height="165" key="GridCell.Tab.0.right" timestamp="1597197502437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="194" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594264668704" />
-    <state x="649" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1594263118401">
+    <state width="1877" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597197502437" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597192832250">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="649" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594263118401" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597192832250" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593482420523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

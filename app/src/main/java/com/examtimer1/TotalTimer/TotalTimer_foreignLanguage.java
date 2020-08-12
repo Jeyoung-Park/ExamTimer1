@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -54,10 +55,12 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
         setContentView(R.layout.activity_foreignlanguage_tt);
 
         mInterstitialAd = new InterstitialAd(TotalTimer_foreignLanguage.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/10331737121");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
+
 
         TextView_time_foreignLanguage_tt=findViewById(R.id.TextView_time_foreignLanguage_tt);
         btn_start_pause=findViewById(R.id.btn_start_pause_foreignLanguage_tt);

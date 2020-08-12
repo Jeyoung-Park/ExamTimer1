@@ -306,6 +306,7 @@ public class CustomAnalogClock extends View {
             setBreakTimeEnd(false);
         }
         else if(timeSpentInMinute>=510) setExamEnd(true);
+
 //        else if(timeSpentInMinute)
    /*     if(getCurrent_subject()==2&&(!isTimeSet[0])){
             startTimeInMillis=currentTime;

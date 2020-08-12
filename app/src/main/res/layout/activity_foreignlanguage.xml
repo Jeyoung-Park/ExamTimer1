@@ -4,18 +4,39 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="제2외국어/한문 (40분)"
-        android:textSize="30dp"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"></TextView>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="제2외국어/한문 (40분)"-->
+<!--        android:textSize="30dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:gravity="center_horizontal"></TextView>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
+        <TextView
+            android:id="@+id/TextView_foreignLanguage_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="외국어 (40분)"
+            android:textSize="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/TextView_time_foreignLanguage"
+            ></TextView>
+        <ImageButton
+            android:id="@+id/btn_foreignLanguage_toClockMode"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/btn_design_analog_clock"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            ></ImageButton>
         <TextView
             android:id="@+id/TextView_time_foreignLanguage"
             android:layout_width="wrap_content"

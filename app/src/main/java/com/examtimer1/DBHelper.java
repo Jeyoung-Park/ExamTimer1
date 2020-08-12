@@ -39,8 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Cursor
-    LoadSQLiteDBCursor(){
+    public Cursor LoadSQLiteDBCursor(){
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 

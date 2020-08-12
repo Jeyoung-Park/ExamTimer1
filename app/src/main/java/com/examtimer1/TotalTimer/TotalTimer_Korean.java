@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -35,6 +36,8 @@ public class TotalTimer_Korean extends AppCompatActivity {
         setContentView(R.layout.activity_korean_tt);
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
+
 
         TextView_time_korean_tt=findViewById(R.id.TextView_time_korean_tt);
         btn_start_pause=findViewById(R.id.btn_start_pause_tt);
