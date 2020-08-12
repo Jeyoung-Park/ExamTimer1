@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AnalogClock;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ public class TotalTimer_analogClock extends AppCompatActivity {
 //    private int current_subject;
     private CustomAnalogClock analogClock;
     private int current_subject;
+    private Thread thread;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class TotalTimer_analogClock extends AppCompatActivity {
         Log.d("로그", "TotalTimer_analogClock.onCreate() 호출");
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
+
 //
 //        XmlPullParser parser = .getXml(R.layout.activity_analog_clock);
 //        AttributeSet attributes = Xml.asAttributeSet(parser);
@@ -75,8 +79,7 @@ public class TotalTimer_analogClock extends AppCompatActivity {
             }
         });
 
-
-        (new Thread(new Runnable()
+        thread=new Thread(new Runnable()
         {
 
             @Override
@@ -120,7 +123,11 @@ public class TotalTimer_analogClock extends AppCompatActivity {
                                     Log.d("tag_time", "isBreakTimeEnd");
 
                                 }
-                                if(analogClock.isExamEnd()) Toast.makeText(TotalTimer_analogClock.this, "모든 시험이 종료되었습니다.\n뒤로 가기 버튼을 눌러 시험을 종료하세요", Toast.LENGTH_SHORT).show();
+                                if(analogClock.isExamEnd()) {
+                                    Toast.makeText(TotalTimer_analogClock.this, "모든 시험이 종료되었습니다.\n뒤로 가기 버튼을 눌러 시험을 종료하세요", Toast.LENGTH_SHORT).show();
+                                    analogClock.setStart(false);
+                                    btn_start_analogClock.setEnabled(false);
+                                }
                             }
                         });
                     }
@@ -129,7 +136,8 @@ public class TotalTimer_analogClock extends AppCompatActivity {
                         e.printStackTrace();
                     }
             }
-        })).start();
+        });
+        thread.start();
   /*      Handler mHandler =new Handler(Looper.getMainLooper());
         mHandler.postDelayed(new Runnable()
         {
@@ -297,6 +305,7 @@ public class TotalTimer_analogClock extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+                thread.interrupt();
                 TotalTimer_analogClock.super.onBackPressed();//뒤로가기
             }
         });
@@ -309,5 +318,11 @@ public class TotalTimer_analogClock extends AppCompatActivity {
         });
         AlertDialog alertDialog=builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        thread.interrupt();
+        super.onDestroy();
     }
 }

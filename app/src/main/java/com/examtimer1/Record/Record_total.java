@@ -52,6 +52,7 @@ public class Record_total extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        if(!mAdView.isLoading()) Log.d("광고 오류", "하단 광고 로드 실패");
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
 

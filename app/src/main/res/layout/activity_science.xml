@@ -4,50 +4,101 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/TextView_title_science"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="탐구 (102분)"
-        android:textSize="30dp"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"></TextView>
-    <LinearLayout
-        android:id="@+id/LinearLayout_btns_science_selection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="30dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignTop="@id/TextView_title_science"
-        android:layout_marginTop="90dp">
-        <Button
-            android:id="@+id/btn_oneScience"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="탐구 영역 1개\n(30분)"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/btn_design1"
-            android:textColor="#FFFFFF">
-        </Button>
-        <Button
-            android:id="@+id/btn_threeScience"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="탐구 영역 3개\n(102분)"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/btn_design1"
-            android:textColor="#FFFFFF">
-        </Button>
-
-    </LinearLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/TextView_title_science"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="탐구 (102분)"-->
+<!--        android:textSize="30dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:textAlignment="center"></TextView>-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/LinearLayout_btns_science_selection"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:weightSum="2"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginHorizontal="30dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_alignTop="@id/TextView_title_science"-->
+<!--        android:layout_marginTop="90dp">-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_oneScience"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="탐구 영역 1개\n(30분)"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:background="@drawable/btn_design1"-->
+<!--            android:textColor="#FFFFFF">-->
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_threeScience"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="탐구 영역 3개\n(102분)"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:background="@drawable/btn_design1"-->
+<!--            android:textColor="#FFFFFF">-->
+<!--        </Button>-->
+<!--    </LinearLayout>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
+        <LinearLayout
+            android:id="@+id/LinearLayout_btns_science_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/TextView_science_title">
+            <Button
+                android:id="@+id/btn_oneScience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탐구 영역 1개\n(30분)"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_design1"
+                android:textColor="#FFFFFF">
+            </Button>
+            <Button
+                android:id="@+id/btn_threeScience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탐구 영역 3개\n(102분)"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/btn_design1"
+                android:textColor="#FFFFFF">
+            </Button>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/TextView_science_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="탐구 (102분)"
+            android:textSize="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/TextView_time_science"
+            ></TextView>
+        <ImageButton
+            android:id="@+id/btn_science_toClockMode"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/btn_design_analog_clock"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            ></ImageButton>
         <TextView
             android:id="@+id/TextView_time_science"
             android:layout_width="wrap_content"
