@@ -36,6 +36,11 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="C:\Users\user\EloquenceKey1.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -169,10 +174,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597197502437" />
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597192832250">
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597235510013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597192832250" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597235510013" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593482420523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
