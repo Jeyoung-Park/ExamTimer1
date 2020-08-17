@@ -223,7 +223,7 @@ public class CustomAnalogClock extends View {
             isPauseTimeAdded=true;
             currentTime=System.currentTimeMillis();
             hour= (int) ((currentTime-startTimeInMillis-pauseTimeInMillis)/1000/60/60);
-            minute=(int) ((currentTime-startTimeInMillis-pauseTimeInMillis)/1000/60);
+            minute=(int) ((currentTime-startTimeInMillis-pauseTimeInMillis)/1000/60%60);
             second=(int) ((currentTime-startTimeInMillis-pauseTimeInMillis)/1000%60);
         }
         else if(!isStart){
@@ -337,11 +337,11 @@ public class CustomAnalogClock extends View {
 
     private void drawHandLine_hour(Canvas canvas, double hour, double minute) {
         Log.d("tag", "drawHandLine_hour() 호출");
-        if(minute>=60){
-            minute-=60;
-            hour++;
-        }
+//        if(minute>=60){
+//            minute-=60;
+//        }
         double angle = Math.PI * hour / 6 +minute/360*Math.PI - Math.PI / 2;
+
         int handRadius = mRadius - mHandTruncation - mHourHandTruncation;
         canvas.drawLine(mWidth / 2, mHeight / 2, (float) (mWidth / 2 + Math.cos(angle) * handRadius), (float) (mHeight / 2 + Math.sin(angle) * handRadius), mPaint);
     }
