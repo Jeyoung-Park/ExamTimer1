@@ -20,6 +20,9 @@ import com.examtimer1.MainActivity;
 import com.examtimer1.TotalTimer.TotalTimer_analogClock;
 import com.examtimer1.TotalTimer.TotalTimer_breaktime_after_science1;
 import com.examtimer1.examtimer.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class SubjectTimer_Korean_analog extends AppCompatActivity {
 
@@ -28,6 +31,7 @@ public class SubjectTimer_Korean_analog extends AppCompatActivity {
     private ImageButton btn_toDigitalMode;
     private CustomAnalogClock_Korean analogClock;
     private Thread thread;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +48,24 @@ public class SubjectTimer_Korean_analog extends AppCompatActivity {
         btn_toDigitalMode=findViewById(R.id.btn_toDigitalMode_Korean);
 
         TextView_analogClock.bringToFront(); //레이아웃을 맨 앞으로
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
+
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdFailedToLoad(int i) {
+                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                Log.d("Tag_Ad", "광고 로드 완료");
+                super.onAdLoaded();
+            }
+        });
 
         btn_start_analogClock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +144,9 @@ public class SubjectTimer_Korean_analog extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_Korean_analog.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

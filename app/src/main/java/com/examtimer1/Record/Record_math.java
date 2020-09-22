@@ -59,7 +59,6 @@ public class Record_math extends AppCompatActivity {
         timerRecordItems.clear();
         mDBHelper = new DBHelper(Record_math.this, "TABLE_SUBJECT_MATH");
         db = mDBHelper.getReadableDatabase();
-        db.beginTransaction();
 
         Cursor cursor = mDBHelper.LoadSQLiteDBCursor();
         try {
@@ -68,13 +67,12 @@ public class Record_math extends AppCompatActivity {
                 addItem(cursor.getLong(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
                 cursor.moveToNext();
             }
-            db.setTransactionSuccessful();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (cursor != null) {
                 cursor.close();
-                db.endTransaction();
+                db.close();
             }
         }
 

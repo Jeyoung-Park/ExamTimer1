@@ -72,6 +72,7 @@ public class Record_science_total extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
+                db.close();
             }
         }
 

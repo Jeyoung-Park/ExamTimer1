@@ -38,7 +38,7 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="C:\Users\user\EloquenceKey1.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\user\AppKey1.jks" />
     <option name="KEY_ALIAS" value="key0" />
   </component>
   <component name="Git.Settings">
@@ -54,12 +54,12 @@
   <component name="PropertiesComponent">
     <property name="BundleExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-08T05:08:40.643Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-09-06T07:27:10.203Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\user\MyGitHub\ExamTimer1\app" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppKey1.jks" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -154,30 +154,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1597197441414" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1597295965293">
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1600778753389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597295965293" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1597567696438">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600778753389" />
+    <state width="1877" height="153" key="GridCell.Tab.0.bottom" timestamp="1600778668759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597567696438" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1597567696438">
+    <state width="1877" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600778668759" />
+    <state width="1877" height="153" key="GridCell.Tab.0.center" timestamp="1600778668759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597567696438" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1597567696438">
+    <state width="1877" height="153" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600778668759" />
+    <state width="1877" height="153" key="GridCell.Tab.0.left" timestamp="1600778668759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597567696438" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1597567696438">
+    <state width="1877" height="153" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600778668759" />
+    <state width="1877" height="153" key="GridCell.Tab.0.right" timestamp="1600778668759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597567696438" />
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597295950829">
+    <state width="1877" height="153" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600778668759" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597711708277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597295950829" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597711708277" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593482420523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

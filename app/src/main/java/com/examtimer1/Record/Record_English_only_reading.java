@@ -75,7 +75,7 @@ public class Record_English_only_reading extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
-//                db.endTransaction();
+                db.close();
             }
         }
 

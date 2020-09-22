@@ -74,6 +74,7 @@ public class Record_science2 extends AppCompatActivity {
             if (cursor != null) {
                 cursor.close();
 //                db.endTransaction();
+                db.close();
             }
         }
 
@@ -84,6 +85,7 @@ public class Record_science2 extends AppCompatActivity {
 
         recyclerviewAdater = new MyAdapter(timerRecordItems, Record_science2.this, "TABLE_SUBJECT_SCIENCE2");
         recyclerView.setAdapter(recyclerviewAdater);
+        db.close();
     }
 
     public void addItem(Long id, String title, String time, String date) {

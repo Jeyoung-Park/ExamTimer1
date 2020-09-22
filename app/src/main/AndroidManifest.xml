@@ -100,5 +100,11 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="com.examtimer1.SubjectTimer.SubjectTimer_foreignLanguage_analog"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="com.examtimer1.SubjectTimer.SubjectTimer_history_analog"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.examtimer1.SubjectTimer.SubjectTimer_science1_analog"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="com.examtimer1.SubjectTimer.SubjectTimer_science2_analog"
+            android:screenOrientation="portrait"></activity>
     </application>
 </manifest>

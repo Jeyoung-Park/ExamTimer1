@@ -73,6 +73,7 @@ public class Record_foreignLanguage extends AppCompatActivity {
             if (cursor != null) {
                 cursor.close();
 //                db.endTransaction();
+                db.close();
             }
         }
 
@@ -83,6 +84,7 @@ public class Record_foreignLanguage extends AppCompatActivity {
 
         recyclerviewAdater = new MyAdapter(timerRecordItems, Record_foreignLanguage.this, "TABLE_SUBJECT_FL");
         recyclerView.setAdapter(recyclerviewAdater);
+        db.close();
     }
 
     public void addItem(Long id, String title, String time, String date) {

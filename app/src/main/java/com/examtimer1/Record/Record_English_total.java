@@ -72,6 +72,7 @@ public class Record_English_total extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
+                db.close();
             }
         }
 

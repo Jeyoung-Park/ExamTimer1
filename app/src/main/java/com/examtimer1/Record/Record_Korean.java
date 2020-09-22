@@ -76,6 +76,7 @@ public class Record_Korean extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
+                db.close();
             }
         }
 

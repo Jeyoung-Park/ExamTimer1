@@ -74,6 +74,7 @@ public class Record_history extends AppCompatActivity {
         } finally {
             if (cursor != null) {
                 cursor.close();
+                db.close();
             }
         }
 

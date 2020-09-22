@@ -15,7 +15,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.examtimer1.CustomAnalogClock_science;
+import com.examtimer1.MainActivity;
 import com.examtimer1.examtimer.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class SubjectTimer_science_analog extends AppCompatActivity {
 
@@ -24,10 +28,11 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
 //    private CustomAnalogClock customAnalogClock;
 //    private int current_subject;
     private CustomAnalogClock_science analogClock;
-    private int current_subject;
+    private int current_subject, choice;
     private Thread thread;
-    private ImageButton  btn_toDigitalMode;
-    
+    private ImageButton  btn_toDigitalMode, btn_settings;
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +55,27 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
         TextView_analogClock_subject_name=findViewById(R.id.TextView_analogClock_science);
         analogClock=findViewById(R.id.analogClock_science);
         btn_toDigitalMode=findViewById(R.id.btn_toDigitalMode_science);
+        btn_settings=findViewById(R.id.btn_science_settings);
 
         TextView_analogClock_subject_name.bringToFront(); //레이아웃을 맨 앞으로
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
+
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdFailedToLoad(int i) {
+                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                Log.d("Tag_Ad", "광고 로드 완료");
+                super.onAdLoaded();
+            }
+        });
 
         /*if(!analogClock.isStart()&&analogClock.getCnt_btn_pressed()>=1){
             btn_start_analogClock.setText("계속");
@@ -59,6 +83,41 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
         else if(analogClock.isStart()&&analogClock.getCnt_btn_pressed()>=1){
             btn_start_analogClock.setText("일시정지");
         }*/
+
+        btn_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String[] science_subjects={"탐구 영역 전체", "한국사", "탐구 1", "탐구 2"};
+                choice=0;
+
+                AlertDialog.Builder builder=new AlertDialog.Builder(SubjectTimer_science_analog.this);
+                builder.setTitle("과목 설정")
+                        .setSingleChoiceItems(science_subjects, 0, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                choice=which;
+                            }
+                        })
+                        .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent;
+                                if(choice==1) intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_history_analog.class);
+                                else if(choice==2) intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_science1_analog.class);
+                                else intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_science2_analog.class);
+                                if(choice!=0)   startActivity(intent);
+                            }
+                        });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        });
 
         btn_toDigitalMode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -311,7 +370,12 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
                 thread.interrupt();
-                SubjectTimer_science_analog.super.onBackPressed();//뒤로가기
+                Intent tempIntent=new Intent(SubjectTimer_science_analog.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 
