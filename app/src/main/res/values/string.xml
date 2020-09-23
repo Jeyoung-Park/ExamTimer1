@@ -12,5 +12,9 @@
 <!--<string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>-->
 <!--<string name="admob_app_id">ca-app-pub-3081286779348377~5523985031</string>-->
 
-<!--<string name="front_ad_unit">ca-app-pub-3081286779348377/7794370244</string>-->
-<!--전면 광고 테스트 단위: ca-app-pub-3940256099942544/1033173712-->
+
+    <!--배너 광고 단위: ca-app-pub-3081286779348377/4288098440-->
+    <!--<string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <!--<string name="front_ad_unit">ca-app-pub-3081286779348377/7794370244</string>-->
+    <!--전면 광고 테스트 단위: ca-app-pub-3940256099942544/1033173712-->

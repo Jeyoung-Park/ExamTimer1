@@ -240,6 +240,7 @@ public class SubjectTimer_science extends AppCompatActivity {
                     final AlertDialog.Builder saveBuilder = new AlertDialog.Builder(SubjectTimer_science.this);
                     saveBuilder.setTitle("타이머 기록의 제목을 입력하고 저장 폴더를 지정해주세요");
                     final EditText editText=new EditText(SubjectTimer_science.this);
+                    editText.setTextColor(Color.parseColor("#000000"));
                     saveBuilder.setView(editText);
                     saveBuilder.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
                         @Override
