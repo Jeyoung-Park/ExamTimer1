@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="100dp">
+        <TextView
+            android:id="@+id/TextView_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:text="과목별 타이머"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_margin="50dp"></TextView>
+
+        <Button
+            android:id="@+id/btn_Korean"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:text="국어"
+            android:textSize="20sp"
+            android:background="@drawable/btn_design1"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="10dp"></Button>
+
+        <Button
+            android:id="@+id/btn_math"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/btn_design1"
+            android:text="수학"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"></Button>
+
+        <Button
+            android:id="@+id/btn_English"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:text="영어"
+            android:textSize="20sp"
+            android:background="@drawable/btn_design1"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="10dp"></Button>
+        <Button
+            android:id="@+id/btn_science"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:text="탐구"
+            android:textSize="20sp"
+            android:background="@drawable/btn_design1"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="10dp"></Button>
+        <Button
+            android:id="@+id/btn_foreignLanguage"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:text="제2외국어/한문"
+            android:textSize="20sp"
+            android:background="@drawable/btn_design1"
+            android:textColor="#FFFFFF"
+            android:layout_marginVertical="10dp"></Button>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

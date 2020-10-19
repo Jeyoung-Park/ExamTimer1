@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+    <TextView
+        android:id="@+id/TextView_analogClock_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="한국사 (30분)\n14:50~15:20"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/analogClock_history"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        ></TextView>
+
+    <com.examtimer1.CustomAnalogClock_history
+        android:id="@+id/analogClock_history"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        ></com.examtimer1.CustomAnalogClock_history>
+
+    <Button
+        android:id="@+id/btn_start_analogClock_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_design1"
+        android:text="시작"
+        android:textColor="#FFFFFF"
+        app:layout_constraintLeft_toRightOf="@id/analogClock_history"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="10dp"></Button>
+
+    <ImageButton
+        android:id="@+id/btn_toDigitalMode_history"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_design_digital_clock"
+        app:layout_constraintLeft_toRightOf="@id/btn_history_settings"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_analogClock_history"
+        app:layout_constraintBottom_toTopOf="@id/btn_start_analogClock_history"></ImageButton>
+    <ImageButton
+        android:id="@+id/btn_history_settings"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_design_settings"
+        app:layout_constraintLeft_toRightOf="@id/analogClock_history"
+        app:layout_constraintTop_toTopOf="@id/btn_toDigitalMode_history"
+        app:layout_constraintBottom_toBottomOf="@id/btn_toDigitalMode_history"
+        app:layout_constraintRight_toLeftOf="@id/btn_toDigitalMode_history"
+        ></ImageButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

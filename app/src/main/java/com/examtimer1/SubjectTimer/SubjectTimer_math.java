@@ -270,6 +270,9 @@ public class SubjectTimer_math extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_math.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

@@ -302,6 +302,9 @@ public class SubjectTimer_Korean extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_Korean.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

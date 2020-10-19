@@ -365,6 +365,9 @@ public class SubjectTimer_science extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_science.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

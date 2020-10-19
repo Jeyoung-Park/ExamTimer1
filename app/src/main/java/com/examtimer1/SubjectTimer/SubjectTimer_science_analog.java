@@ -1,8 +1,11 @@
 package com.examtimer1.SubjectTimer;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.examtimer1.CustomAnalogClock_science;
 import com.examtimer1.MainActivity;
@@ -23,7 +27,7 @@ import com.google.android.gms.ads.InterstitialAd;
 
 public class SubjectTimer_science_analog extends AppCompatActivity {
 
-    private TextView TextView_analogClock_subject_name;
+    private TextView TextView_analogClock;
     private Button btn_start_analogClock, btn_next_analogClock;
 //    private CustomAnalogClock customAnalogClock;
 //    private int current_subject;
@@ -52,12 +56,12 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
 
         btn_start_analogClock=findViewById(R.id.btn_start_analogClock_science);
 //        btn_next_analogClock=findViewById(R.id.btn_next_analogClock);
-        TextView_analogClock_subject_name=findViewById(R.id.TextView_analogClock_science);
+        TextView_analogClock=findViewById(R.id.TextView_analogClock_science);
         analogClock=findViewById(R.id.analogClock_science);
         btn_toDigitalMode=findViewById(R.id.btn_toDigitalMode_science);
         btn_settings=findViewById(R.id.btn_science_settings);
 
-        TextView_analogClock_subject_name.bringToFront(); //레이아웃을 맨 앞으로
+        TextView_analogClock.bringToFront(); //레이아웃을 맨 앞으로
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
@@ -173,10 +177,10 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
                                 Log.d("thread", "thread 실행중");
                                 Log.d("thread", "current_subject="+current_subject);
 
-                                if(current_subject==2) TextView_analogClock_subject_name.setText("시험지 교체 시간 (10분)\n15:20~15:30");
-                                else if(current_subject==3) TextView_analogClock_subject_name.setText("탐구 영역 1(30분)\n15:30~16:00");
-                                else if(current_subject==4) TextView_analogClock_subject_name.setText("시험지 교체 시간 (2분)\n16:00~16:02");
-                                else if(current_subject==5) TextView_analogClock_subject_name.setText("탐구 영역 2(30분)\n16:02~16:32");
+                                if(current_subject==2) TextView_analogClock.setText("시험지 교체 시간 (10분)\n15:20~15:30");
+                                else if(current_subject==3) TextView_analogClock.setText("탐구 영역 1(30분)\n15:30~16:00");
+                                else if(current_subject==4) TextView_analogClock.setText("시험지 교체 시간 (2분)\n16:00~16:02");
+                                else if(current_subject==5) TextView_analogClock.setText("탐구 영역 2(30분)\n16:02~16:32");
 
                                 if(analogClock.isTestEnd()) {
                                     Toast.makeText(SubjectTimer_science_analog.this, "시험이 종료되었습니다.", Toast.LENGTH_SHORT).show();
@@ -359,6 +363,125 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
 
             }
         });*/
+    }
+
+    @SuppressLint("ResourceType")
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation==Configuration.ORIENTATION_PORTRAIT){
+
+            ConstraintLayout.LayoutParams layoutParams_analogClock=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.MATCH_PARENT, 0
+            );
+            layoutParams_analogClock.dimensionRatio="1:1";
+            layoutParams_analogClock.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            analogClock.setId(1001);
+            analogClock.setLayoutParams(layoutParams_analogClock);
+
+            ConstraintLayout.LayoutParams layoutParams_title=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_title.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.bottomToTop=1001;
+            TextView_analogClock.setId(1002);
+            TextView_analogClock.setLayoutParams(layoutParams_title);
+
+            ConstraintLayout.LayoutParams layoutParams_button_start=new ConstraintLayout.LayoutParams(
+                    0, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_button_start.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.topToBottom=1001;
+            layoutParams_button_start.leftMargin=100;
+            layoutParams_button_start.rightMargin=100;
+            btn_start_analogClock.setId(1003);
+            btn_start_analogClock.setLayoutParams(layoutParams_button_start);
+
+            ConstraintLayout.LayoutParams layoutParams_button_toDigital=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_button_toDigital.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.topMargin=20;
+            layoutParams_button_toDigital.rightMargin=20;
+            btn_toDigitalMode.setId(1004);
+            btn_toDigitalMode.setLayoutParams(layoutParams_button_toDigital);
+
+            ConstraintLayout.LayoutParams layoutParams_btn_setting=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_btn_setting.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_btn_setting.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_btn_setting.topMargin=20;
+            layoutParams_btn_setting.leftMargin=20;
+            btn_settings.setId(1005);
+            btn_settings.setLayoutParams(layoutParams_btn_setting);
+        }
+        else if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+            ConstraintLayout.LayoutParams layoutParams_analogClock=new ConstraintLayout.LayoutParams(
+                    height, height
+            );
+            layoutParams_analogClock.dimensionRatio="1:1";
+            layoutParams_analogClock.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            analogClock.setId(1001);
+            analogClock.setLayoutParams(layoutParams_analogClock);
+
+            ConstraintLayout.LayoutParams layoutParams_title=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_title.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.leftToRight=1001;
+            layoutParams_title.topMargin=100;
+            TextView_analogClock.setId(1002);
+            TextView_analogClock.setLayoutParams(layoutParams_title);
+
+            ConstraintLayout.LayoutParams layoutParams_button_start=new ConstraintLayout.LayoutParams(
+                    0, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_button_start.leftToRight=1001;
+            layoutParams_button_start.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.rightMargin=100;
+            layoutParams_button_start.leftMargin=100;
+            layoutParams_button_start.bottomMargin=100;
+            btn_start_analogClock.setId(1003);
+            btn_start_analogClock.setLayoutParams(layoutParams_button_start);
+
+            ConstraintLayout.LayoutParams layoutParams_button_toDigital=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_button_toDigital.dimensionRatio="1:1";
+            layoutParams_button_toDigital.leftToRight=1005;
+            layoutParams_button_toDigital.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.bottomToTop=1003;
+            layoutParams_button_toDigital.topToBottom=1002;
+            btn_toDigitalMode.setId(1004);
+            btn_toDigitalMode.setLayoutParams(layoutParams_button_toDigital);
+
+            ConstraintLayout.LayoutParams layoutParams_btn_setting=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_btn_setting.leftToRight=1001;
+            layoutParams_btn_setting.rightToLeft=1004;
+            layoutParams_btn_setting.topToBottom=1002;
+            layoutParams_btn_setting.bottomToTop=1003;
+            btn_settings.setId(1005);
+            btn_settings.setLayoutParams(layoutParams_btn_setting);
+        }
     }
 
     @Override

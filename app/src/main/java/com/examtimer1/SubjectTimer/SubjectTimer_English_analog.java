@@ -1,8 +1,11 @@
 package com.examtimer1.SubjectTimer;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.examtimer1.CustomAnalogClock_English;
 import com.examtimer1.MainActivity;
@@ -128,6 +132,105 @@ public class SubjectTimer_English_analog extends AppCompatActivity {
             }
         });
         thread.start();
+    }
+
+    @SuppressLint("ResourceType")
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation==Configuration.ORIENTATION_PORTRAIT){
+
+            ConstraintLayout.LayoutParams layoutParams_analogClock=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.MATCH_PARENT, 0
+            );
+            layoutParams_analogClock.dimensionRatio="1:1";
+            layoutParams_analogClock.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            analogClock.setId(1001);
+            analogClock.setLayoutParams(layoutParams_analogClock);
+
+            ConstraintLayout.LayoutParams layoutParams_title=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_title.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.bottomToTop=1001;
+            TextView_analogClock.setId(1002);
+            TextView_analogClock.setLayoutParams(layoutParams_title);
+
+            ConstraintLayout.LayoutParams layoutParams_button_start=new ConstraintLayout.LayoutParams(
+                    0, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_button_start.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.topToBottom=1001;
+            layoutParams_button_start.leftMargin=100;
+            layoutParams_button_start.rightMargin=100;
+            btn_start_analogClock.setId(1003);
+            btn_start_analogClock.setLayoutParams(layoutParams_button_start);
+
+            ConstraintLayout.LayoutParams layoutParams_button_toDigital=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_button_toDigital.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.topMargin=20;
+            layoutParams_button_toDigital.rightMargin=20;
+            btn_toDigitalMode.setId(1004);
+            btn_toDigitalMode.setLayoutParams(layoutParams_button_toDigital);
+        }
+        else if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+            ConstraintLayout.LayoutParams layoutParams_analogClock=new ConstraintLayout.LayoutParams(
+                    height, height
+            );
+            layoutParams_analogClock.dimensionRatio="1:1";
+            layoutParams_analogClock.leftToLeft=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_analogClock.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            analogClock.setId(1001);
+            analogClock.setLayoutParams(layoutParams_analogClock);
+
+            ConstraintLayout.LayoutParams layoutParams_title=new ConstraintLayout.LayoutParams(
+                    ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_title.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_title.leftToRight=1001;
+            layoutParams_title.topMargin=100;
+            TextView_analogClock.setId(1002);
+            TextView_analogClock.setLayoutParams(layoutParams_title);
+
+            ConstraintLayout.LayoutParams layoutParams_button_start=new ConstraintLayout.LayoutParams(
+                    0, ConstraintLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams_button_start.leftToRight=1001;
+            layoutParams_button_start.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_start.rightMargin=100;
+            layoutParams_button_start.leftMargin=100;
+            layoutParams_button_start.bottomMargin=100;
+            btn_start_analogClock.setId(1003);
+            btn_start_analogClock.setLayoutParams(layoutParams_button_start);
+
+            ConstraintLayout.LayoutParams layoutParams_button_toDigital=new ConstraintLayout.LayoutParams(
+                    250, 250
+            );
+            layoutParams_button_toDigital.dimensionRatio="1:1";
+            layoutParams_button_toDigital.leftToRight=1001;
+            layoutParams_button_toDigital.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+            layoutParams_button_toDigital.bottomToTop=1003;
+            layoutParams_button_toDigital.topToBottom=1002;
+            btn_toDigitalMode.setId(1004);
+            btn_toDigitalMode.setLayoutParams(layoutParams_button_toDigital);
+        }
     }
 
     @Override

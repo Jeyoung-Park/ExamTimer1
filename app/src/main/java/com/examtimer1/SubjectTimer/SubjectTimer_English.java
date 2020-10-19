@@ -1,8 +1,10 @@
 package com.examtimer1.SubjectTimer;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,7 +20,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.examtimer1.CustomAnalogClock;
 import com.examtimer1.DBHelper;
 import com.examtimer1.MainActivity;
 import com.examtimer1.TotalTimer.TotalTimer_breaktime_after_history;
@@ -323,6 +327,9 @@ public class SubjectTimer_English extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_English.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

@@ -138,7 +138,8 @@ public class TotalTimer_breaktime1 extends AppCompatActivity {
                 dialog.cancel();
                 Intent tempIntent=new Intent(TotalTimer_breaktime1.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(tempIntent);            }
+                startActivity(tempIntent);
+            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

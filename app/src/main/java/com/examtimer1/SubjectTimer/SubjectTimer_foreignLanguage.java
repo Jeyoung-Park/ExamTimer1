@@ -256,6 +256,9 @@ public class SubjectTimer_foreignLanguage extends AppCompatActivity {
                 Intent tempIntent=new Intent(SubjectTimer_foreignLanguage.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 

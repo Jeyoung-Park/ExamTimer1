@@ -1,6 +1,7 @@
 package com.examtimer1.ui.record;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,9 @@ public class RecordFragment extends Fragment implements OnBackPressedListener {
     private Button btn_record_total, btn_record_Korean, btn_record_math, btn_record_English, btn_record_science, btn_record_foreignLanguage;
     private long backKeyPressedTime;
     MainActivity activity;
+    private LayoutInflater myLayoutInflater;
+    private ViewGroup myViewGroup;
+    private Bundle myBundle;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -39,6 +43,9 @@ public class RecordFragment extends Fragment implements OnBackPressedListener {
                 ViewModelProviders.of(this).get(RecordViewModel.class);
         View root = inflater.inflate(R.layout.fragment_record, container, false);
         activity=(MainActivity)getActivity();
+        myBundle=savedInstanceState;
+        myLayoutInflater=inflater;
+        myViewGroup=container;
 
 //        final TextView textView = root.findViewById(R.id.text_notifications);
 //        notificationsViewModel.getText().observe(this, new Observer<String>() {
@@ -102,6 +109,16 @@ public class RecordFragment extends Fragment implements OnBackPressedListener {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+            onCreateView(myLayoutInflater, myViewGroup, myBundle);
+        }else{
+            onCreateView(myLayoutInflater, myViewGroup, myBundle);
+        }
     }
 
     @Override
