@@ -55,7 +55,7 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
         setContentView(R.layout.activity_foreignlanguage_tt);
 
         mInterstitialAd = new InterstitialAd(TotalTimer_foreignLanguage.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
@@ -170,6 +170,7 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
                         if (mInterstitialAd.isLoaded()) {
                             mInterstitialAd.show();
                         }
+
                     }
                 });
                 saveBuilder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
@@ -233,7 +234,11 @@ public class TotalTimer_foreignLanguage extends AppCompatActivity {
                 dialog.cancel();
                 Intent tempIntent=new Intent(TotalTimer_foreignLanguage.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(tempIntent);            }
+                startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

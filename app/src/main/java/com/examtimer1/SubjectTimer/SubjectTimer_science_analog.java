@@ -36,6 +36,7 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
     private Thread thread;
     private ImageButton  btn_toDigitalMode, btn_settings;
     private InterstitialAd mInterstitialAd;
+    private boolean isThread=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +65,17 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
         TextView_analogClock.bringToFront(); //레이아웃을 맨 앞으로
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
             public void onAdFailedToLoad(int i) {
-                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
                 super.onAdFailedToLoad(i);
             }
 
             @Override
             public void onAdLoaded() {
-                Log.d("Tag_Ad", "광고 로드 완료");
                 super.onAdLoaded();
             }
         });
@@ -164,7 +163,7 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
             @Override
             public void run()
             {
-                while (!Thread.interrupted())
+                while (isThread)
                     try
                     {
                         Thread.sleep(1000);
@@ -174,8 +173,6 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
                             public void run()
                             {
                                 current_subject=analogClock.getCurrent_subject();
-                                Log.d("thread", "thread 실행중");
-                                Log.d("thread", "current_subject="+current_subject);
 
                                 if(current_subject==2) TextView_analogClock.setText("시험지 교체 시간 (10분)\n15:20~15:30");
                                 else if(current_subject==3) TextView_analogClock.setText("탐구 영역 1(30분)\n15:30~16:00");
@@ -184,15 +181,13 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
 
                                 if(analogClock.isTestEnd()) {
                                     Toast.makeText(SubjectTimer_science_analog.this, "시험이 종료되었습니다.", Toast.LENGTH_SHORT).show();
-                                    Log.d("tag_time", "isTestEnd");
                                 }
                                 if(analogClock.isBreakTimeEnd()) {
                                     Toast.makeText(SubjectTimer_science_analog.this, "쉬는 시간이 종료되었습니다.\n시험을 시작하세요.", Toast.LENGTH_SHORT).show();
-                                    Log.d("tag_time", "isBreakTimeEnd");
-
                                 }
                                 if(analogClock.isExamEnd()) {
                                     Toast.makeText(SubjectTimer_science_analog.this, "모든 시험이 종료되었습니다.\n뒤로 가기 버튼을 눌러 시험을 종료하세요", Toast.LENGTH_SHORT).show();
+                                    isThread=true;
                                     analogClock.setStart(false);
                                     btn_start_analogClock.setEnabled(false);
                                 }
@@ -492,7 +487,7 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                thread.interrupt();
+                isThread=false;
                 Intent tempIntent=new Intent(SubjectTimer_science_analog.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
@@ -514,7 +509,7 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        thread.interrupt();
         super.onDestroy();
+        isThread=false;
     }
 }

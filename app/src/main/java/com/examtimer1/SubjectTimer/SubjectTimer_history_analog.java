@@ -35,6 +35,7 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
     private Thread thread;
     private int choice;
     private InterstitialAd mInterstitialAd;
+    private boolean isThread=true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,19 +55,17 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
         TextView_analogClock.bringToFront(); //레이아웃을 맨 앞으로
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
             public void onAdFailedToLoad(int i) {
-                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
                 super.onAdFailedToLoad(i);
             }
 
             @Override
             public void onAdLoaded() {
-                Log.d("Tag_Ad", "광고 로드 완료");
                 super.onAdLoaded();
             }
         });
@@ -146,7 +145,7 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
             @Override
             public void run()
             {
-                while (!Thread.interrupted())
+                while (isThread)
                     try
                     {
                         Thread.sleep(1000);
@@ -157,6 +156,7 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
                             {
                                 if(analogClock.isExamEnd()) {
                                     Toast.makeText(SubjectTimer_history_analog.this, "모든 시험이 종료되었습니다.\n뒤로 가기 버튼을 눌러 시험을 종료하세요", Toast.LENGTH_SHORT).show();
+                                    isThread=false;
                                     analogClock.setStart(false);
                                     btn_start_analogClock.setEnabled(false);
                                 }
@@ -299,6 +299,7 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+                isThread=false;
                 Intent tempIntent=new Intent(SubjectTimer_history_analog.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tempIntent);
@@ -318,4 +319,9 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
         alertDialog.show();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isThread=false;
+    }
 }

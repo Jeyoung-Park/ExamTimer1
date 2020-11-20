@@ -30,6 +30,7 @@ public class TotalTimer_breaktime_after_science1 extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
     private boolean isTimerRunning;
     private long timeLeftInMillis=START_TIME_IN_MILLIS;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,9 @@ public class TotalTimer_breaktime_after_science1 extends AppCompatActivity {
         this.getSupportActionBar().hide(); // 상단 바 숨기기
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         TextView_time_breaktime_after_science1=findViewById(R.id.TextView_time_breaktime_after_science1);
         btn_start_pause=findViewById(R.id.btn_start_pause_breaktime_after_sciecne1);
@@ -141,7 +145,10 @@ public class TotalTimer_breaktime_after_science1 extends AppCompatActivity {
                 dialog.cancel();
                 Intent tempIntent=new Intent(TotalTimer_breaktime_after_science1.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(tempIntent);            }
+                startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }}
         });
 
         builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {

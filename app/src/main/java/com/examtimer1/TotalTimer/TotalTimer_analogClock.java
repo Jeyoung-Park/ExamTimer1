@@ -27,6 +27,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.examtimer1.CustomAnalogClock;
 import com.examtimer1.SubjectTimer.SubjectTimer_English;
 import com.examtimer1.examtimer.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -38,13 +41,13 @@ public class TotalTimer_analogClock extends AppCompatActivity {
     private CustomAnalogClock analogClock;
     private int current_subject;
     private Thread thread;
-    
+    private boolean isThread=true;
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analog_clock);
-
-        Log.d("로그", "TotalTimer_analogClock.onCreate() 호출");
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
@@ -54,6 +57,22 @@ public class TotalTimer_analogClock extends AppCompatActivity {
         analogClock=findViewById(R.id.analogClock);
 
         TextView_analogClock_subject_name.bringToFront();
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
+
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdFailedToLoad(int i) {
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+            }
+        });
 
         btn_start_analogClock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +90,7 @@ public class TotalTimer_analogClock extends AppCompatActivity {
             @Override
             public void run()
             {
-                while (!Thread.interrupted())
+                while (isThread)
                     try
                     {
                         Thread.sleep(1000);
@@ -81,12 +100,9 @@ public class TotalTimer_analogClock extends AppCompatActivity {
                             public void run()
                             {
                                 current_subject=analogClock.getCurrent_subject();
-                                Log.d("thread", "thread 실행중");
-                                Log.d("thread", "current_subject="+current_subject);
 
                                 if(current_subject==2) {
                                     TextView_analogClock_subject_name.setText("쉬는 시간 (20분)\n10:00~10:20\n(10:30에 시험 시작)");
-                                    Log.d("tag", "두 번째 과목 돌입");
                                 }
                                 else if(current_subject==3) TextView_analogClock_subject_name.setText("수학 (100분)\n10:30~12:10");
                                 else if(current_subject==4) TextView_analogClock_subject_name.setText("점심 시간 (50분)\n12:10~13:00\n(13:10에 시험 시작)");
@@ -102,15 +118,14 @@ public class TotalTimer_analogClock extends AppCompatActivity {
 
                                 if(analogClock.isTestEnd()) {
                                     Toast.makeText(TotalTimer_analogClock.this, "시험이 종료되었습니다.", Toast.LENGTH_SHORT).show();
-                                    Log.d("tag_time", "isTestEnd");
                                 }
                                 if(analogClock.isBreakTimeEnd()) {
                                     Toast.makeText(TotalTimer_analogClock.this, "쉬는 시간이 종료되었습니다.\n시험을 시작하세요.", Toast.LENGTH_SHORT).show();
-                                    Log.d("tag_time", "isBreakTimeEnd");
 
                                 }
                                 if(analogClock.isExamEnd()) {
                                     Toast.makeText(TotalTimer_analogClock.this, "모든 시험이 종료되었습니다.\n뒤로 가기 버튼을 눌러 시험을 종료하세요", Toast.LENGTH_SHORT).show();
+                                    isThread=true;
                                     analogClock.setStart(false);
                                     btn_start_analogClock.setEnabled(false);
                                 }
@@ -168,7 +183,6 @@ public class TotalTimer_analogClock extends AppCompatActivity {
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
             int height = displayMetrics.heightPixels;
             int width = displayMetrics.widthPixels;
-            Log.d("TotalTimer_analogClock", "width: "+width+" / height: "+height);
             ConstraintLayout.LayoutParams layoutParams_analogClock=new ConstraintLayout.LayoutParams(
                     height, height
             );
@@ -212,8 +226,11 @@ public class TotalTimer_analogClock extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                thread.interrupt();
+                isThread=false;
                 TotalTimer_analogClock.super.onBackPressed();//뒤로가기
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 
@@ -229,7 +246,7 @@ public class TotalTimer_analogClock extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        thread.interrupt();
         super.onDestroy();
+        isThread=false;
     }
 }

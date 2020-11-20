@@ -55,19 +55,17 @@ public class SubjectTimer_math extends AppCompatActivity {
         setContentView(R.layout.activity_math);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
             public void onAdFailedToLoad(int i) {
-                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
                 super.onAdFailedToLoad(i);
             }
 
             @Override
             public void onAdLoaded() {
-                Log.d("Tag_Ad", "광고 로드 완료");
                 super.onAdLoaded();
             }
         });
@@ -164,8 +162,6 @@ public class SubjectTimer_math extends AppCompatActivity {
                         mDBHelper.onCreate(db);
                         db.beginTransaction();
 
-                        Log.d("TAG", "check_math_tableName:"+mDBHelper.TABLE_NAME);
-
                         try{
                             ContentValues contentValues=new ContentValues();
 //                        오늘 날짜 측정
@@ -189,9 +185,7 @@ public class SubjectTimer_math extends AppCompatActivity {
                             contentValues.put(mDBHelper.TIME, spentTime);
 
                             db.insert(mDBHelper.TABLE_NAME, null, contentValues);
-                            Log.d("TAG", "check_math_record:"+mDBHelper.TABLE_NAME);
 //                        db.execSQL("INSERT INTO TABLE_SUBJECT_MATH (title, time, date) VALUES ('"+editText.getText().toString()+"', '"+spentTime+"', '"+todayDate+"')");
-                            Log.d("TAG", "check_math :"+ mDBHelper.TABLE_NAME+" / "+editText.getText().toString()+" / "+todayDate+" / "+spentTime);
                             db.setTransactionSuccessful();
                         }catch(Exception e){
                             e.printStackTrace();

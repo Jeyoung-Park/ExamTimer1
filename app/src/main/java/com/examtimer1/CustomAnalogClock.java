@@ -140,19 +140,16 @@ public class CustomAnalogClock extends View {
 
     public CustomAnalogClock(Context context){
         super(context);
-        Log.d("로그", "CustomAnalogClock(Context context) 호출");
     }
 
     public CustomAnalogClock(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Log.d("로그", "CustomAnalogClock(Context context, AttributeSet attrs) 호출");
 //        btn_start_analogClock=findViewById(R.id.btn_start_analogClock);
 //        btn_next_analogClock=findViewById(R.id.btn_next_analogClock);
     }
 
     public CustomAnalogClock(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        Log.d("로그", "CustomAnalogClock(Context context, AttributeSet attrs, int defStyleAttr)");
     }
 
     @SuppressLint("ResourceAsColor")
@@ -165,9 +162,6 @@ public class CustomAnalogClock extends View {
             isTimeSet[i]=false;
         }
 
-        Log.d("로그", "onDraw 호출");
-        Log.d("TAG", "startHour: "+getStart_hour());
-        Log.d("TAG", "startMinute: "+getStart_minute());
 
         /** initialize necessary values */
         if (!isInit) {
@@ -240,10 +234,8 @@ public class CustomAnalogClock extends View {
                 isPauseTimeAdded=false;
             }
         }
-        Log.d("TAG", "시간: "+hour+"\n분: "+minute+"\n초: "+second);
 
         int timeSpentInMinute=hour*60+minute;
-        Log.d("tag_Time", "timeSpentInMInute= "+timeSpentInMinute);
 
         if(timeSpentInMinute==80&&second==0) setTestEnd(true);
         else if(timeSpentInMinute>=80&&timeSpentInMinute<110) {
@@ -321,7 +313,6 @@ public class CustomAnalogClock extends View {
         drawHandLine(canvas, getStart_minute()+minute, false, false); // draw minutes
         drawHandLine(canvas, getStart_second()+second, false, true); // draw seconds
 
-        Log.d("TAG", "isStart?: "+isStart());
         /** invalidate the appearance for next representation of time  */
         postInvalidateDelayed(500);
         invalidate();
@@ -336,7 +327,6 @@ public class CustomAnalogClock extends View {
     }
 
     private void drawHandLine_hour(Canvas canvas, double hour, double minute) {
-        Log.d("tag", "drawHandLine_hour() 호출");
 //        if(minute>=60){
 //            minute-=60;
 //        }

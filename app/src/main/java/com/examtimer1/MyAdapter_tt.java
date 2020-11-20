@@ -57,7 +57,6 @@ public class MyAdapter_tt extends RecyclerView.Adapter<MyAdapter_tt.MyViewHolder
                     if(pos!=RecyclerView.NO_POSITION)
                         if(mListener!=null) {
                             mListener.onItemClick(v, pos);
-                            Log.d("TAG", "클릭되는거냐이거22");
                         }
                 }
             });

@@ -52,19 +52,17 @@ public class SubjectTimer_foreignLanguage extends AppCompatActivity {
         setContentView(R.layout.activity_foreignlanguage);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/7794370244");
+        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
             public void onAdFailedToLoad(int i) {
-                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+i);
                 super.onAdFailedToLoad(i);
             }
 
             @Override
             public void onAdLoaded() {
-                Log.d("Tag_Ad", "광고 로드 완료");
                 super.onAdLoaded();
             }
         });

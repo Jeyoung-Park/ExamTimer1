@@ -46,7 +46,6 @@ public class SubjectTimerFragment extends Fragment implements OnBackPressedListe
         myLayoutInflater=inflater;
         myViewGroup=container;
 
-        Log.d(TAG, "onCreateView 호출");
         subjectTimerViewModel =
                 ViewModelProviders.of(this).get(SubjectTimerViewModel.class);
         View root = inflater.inflate(R.layout.fragment_subject_timer, container, false);
@@ -110,11 +109,7 @@ public class SubjectTimerFragment extends Fragment implements OnBackPressedListe
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
-            Log.d(TAG, "가로");
-        }else{
-            Log.d(TAG, "세로");
-        }
+
     }
 
     @Override
