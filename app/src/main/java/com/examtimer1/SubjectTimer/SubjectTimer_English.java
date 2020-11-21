@@ -70,20 +70,9 @@ public class SubjectTimer_English extends AppCompatActivity {
         btn_toClockMode=findViewById(R.id.btn_English_toClockMode);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
+        mInterstitialAd.setAdUnitId(getString(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-            }
-        });
 
         btn_toClockMode.setOnClickListener(new View.OnClickListener() {
             @Override

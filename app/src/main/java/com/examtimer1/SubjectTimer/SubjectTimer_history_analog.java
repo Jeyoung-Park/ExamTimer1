@@ -55,20 +55,9 @@ public class SubjectTimer_history_analog extends AppCompatActivity {
         TextView_analogClock.bringToFront(); //레이아웃을 맨 앞으로
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
+        mInterstitialAd.setAdUnitId(getString(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-            }
-        });
 
         btn_start_analogClock.setOnClickListener(new View.OnClickListener() {
             @Override

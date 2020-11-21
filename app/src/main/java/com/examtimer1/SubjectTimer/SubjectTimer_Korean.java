@@ -53,20 +53,21 @@ public class SubjectTimer_Korean extends AppCompatActivity {
         setContentView(R.layout.activity_korean);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(String.valueOf(R.string.front_ad_unit));
+        mInterstitialAd.setAdUnitId(getString(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-            }
-        });
+//        mInterstitialAd.setAdListener(new AdListener(){
+//            @Override
+//            public void onAdFailedToLoad(int i) {
+//                super.onAdFailedToLoad(i);
+//                Log.d("TAG_AD", "광고 표시 에러 "+ i);
+//            }
+//
+//            @Override
+//            public void onAdLoaded() {
+//                super.onAdLoaded();
+//            }
+//        });
 
         this.getSupportActionBar().hide(); // 상단 바 숨기기
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //화면 꺼짐 방지
@@ -293,6 +294,8 @@ public class SubjectTimer_Korean extends AppCompatActivity {
                 startActivity(tempIntent);
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
+                }else{
+                    Log.i("TAG_AD", "광고 로드 실패");
                 }
             }
         });
