@@ -73,12 +73,13 @@ public class SubjectTimer_English extends AppCompatActivity {
         mInterstitialAd.setAdUnitId(getString(R.string.front_ad_unit));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
+//        btn_stop_save.setEnabled(false);
 
         btn_toClockMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(SubjectTimer_English.this);
-                builder.setMessage("타이머가 진행 중인 상황에서 아날로그 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n아날로그 시계 모드로 전환하시겠습니까?");
+                builder.setMessage(getString(R.string.explain_digitalToAnalog));
                 builder.setPositiveButton("아날로그 시계모드로 전환", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -123,6 +124,7 @@ public class SubjectTimer_English extends AppCompatActivity {
         btn_start_pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                btn_stop_save.setEnabled(true);
                 if(isTimerRunning) {
                     pauseTimer();
                     btn_start_pause.setText("계속");
@@ -138,6 +140,7 @@ public class SubjectTimer_English extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 resetTimer();
+//                btn_stop_save.setEnabled(false);
                 btn_start_pause.setText("시작");
                 btn_save_end.setVisibility(View.INVISIBLE);
             }
@@ -146,7 +149,13 @@ public class SubjectTimer_English extends AppCompatActivity {
         btn_stop_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pauseTimer();
+                if(isTimerRunning) {
+                    mCountDownTimer.cancel();
+                    mCountDownTimer.onFinish();
+                }
+//                if(isTimerRunning) {
+//                    pauseTimer();
+//                }
                 btn_save_end.setVisibility(View.VISIBLE);
             }
         });

@@ -7,39 +7,15 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="AD" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a0415d-5994-4276-be66-090c0ee80c58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_framework_2_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_work_work_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_19_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_19_5_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_19_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_19_5_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_19_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_19_5_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gass_19_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gass_19_5_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/release/app-release.aab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_English.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_English.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_English_analog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_English_analog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_Korean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_Korean.java" afterDir="false" />
@@ -53,6 +29,24 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science1_analog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science1_analog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science2_analog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science2_analog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science_analog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/SubjectTimer/SubjectTimer_science_analog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_english.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_english.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_foreignlanguage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_foreignlanguage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_korean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_korean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_math.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_math.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/activity_analog_clock_science2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_english.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_english.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_foreignlanguage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_foreignlanguage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_history.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_korean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_korean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_math.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_math.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/activity_analog_clock_science2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/string.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/string.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,10 +199,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602857739698" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1605673918089">
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1606382739276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605673918089" />
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606382739276" />
     <state width="1877" height="157" key="GridCell.Tab.0.bottom" timestamp="1605962999244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -229,10 +223,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602732912898" />
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1603175199863">
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606382724992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603175199863" />
+    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606382724992" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1600837728792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

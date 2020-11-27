@@ -70,7 +70,7 @@ public class SubjectTimer_foreignLanguage_analog extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(SubjectTimer_foreignLanguage_analog.this);
-                builder.setMessage("타이머가 진행 중인 상황에서 디지털 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n디지털 시계 모드로 전환하시겠습니까?");
+                builder.setMessage(getString(R.string.explain_analongToDigital));
                 builder.setPositiveButton("디지털 시계 모드로 전환", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
