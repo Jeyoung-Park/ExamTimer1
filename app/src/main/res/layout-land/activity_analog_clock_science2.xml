@@ -43,30 +43,25 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="10dp"></Button>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CardView_science2"
+    <ImageButton
+        android:id="@+id/btn_toDigitalMode_science2"
         android:layout_width="@dimen/digitalClockIconLen"
         android:layout_height="@dimen/digitalClockIconLen"
         app:layout_constraintLeft_toRightOf="@id/btn_science2_settings"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextView_analogClock_science2"
-        app:layout_constraintBottom_toTopOf="@id/btn_start_analogClock_science2">
-        <ImageButton
-            android:id="@+id/btn_toDigitalMode_science2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/btn_design_digital_clock"
-            ></ImageButton>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintBottom_toTopOf="@id/btn_start_analogClock_science2"
+        android:background="@drawable/btn_design_digital_clock"
+        ></ImageButton>
     <ImageButton
         android:id="@+id/btn_science2_settings"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/btn_design_settings"
         app:layout_constraintLeft_toRightOf="@id/analogClock_science2"
-        app:layout_constraintTop_toTopOf="@id/CardView_science2"
-        app:layout_constraintBottom_toBottomOf="@id/CardView_science2"
-        app:layout_constraintRight_toLeftOf="@id/CardView_science2"
+        app:layout_constraintTop_toTopOf="@id/btn_toDigitalMode_science2"
+        app:layout_constraintBottom_toBottomOf="@id/btn_toDigitalMode_science2"
+        app:layout_constraintRight_toLeftOf="@id/btn_toDigitalMode_science2"
         ></ImageButton>
 
 

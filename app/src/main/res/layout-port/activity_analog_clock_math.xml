@@ -45,21 +45,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         ></Button>
 
-    <androidx.cardview.widget.CardView
+    <ImageButton
+        android:id="@+id/btn_toDigitalMode_math"
         android:layout_width="@dimen/digitalClockIconLen"
         android:layout_height="@dimen/digitalClockIconLen"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="@dimen/digitalClockIcon_radius">
-        <ImageButton
-            android:id="@+id/btn_toDigitalMode_math"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/btn_design_digital_clock"
-            ></ImageButton>
-    </androidx.cardview.widget.CardView>
+        android:background="@drawable/btn_design_digital_clock"
+        ></ImageButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

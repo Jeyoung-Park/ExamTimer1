@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="admob_app_id">ca-app-pub-3081286779348377~5523985031</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3081286779348377/4288098440</string>
-    <string name="banner_ad_unit_id_for_test">ca-app-pub-3081286779348377/4288098440</string>
-    <string name="front_ad_unit">ca-app-pub-3081286779348377/7794370244</string>
-    <string name="front_ad_unit_for_test">ca-app-pub-3081286779348377/7794370244</string>
-    <string name="explain_digitalToAnalog">타이머가 진행 중인 상황에서 아날로그 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n또한 아날로그 시계 모드는 타이머 기록을 저장하지 않습니다.\n아날로그 시계 모드로 전환하시겠습니까?</string>
-    <string name="explain_analongToDigital">타이머가 진행 중인 상황에서 디지털 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n디지털 시계 모드로 전환하시겠습니까?</string>
-</resources>
-
-<!--테스트-->
 <!--<resources>-->
-<!--    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
-<!--    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>-->
-<!--    <string name="front_ad_unit">ca-app-pub-3940256099942544/1033173712</string>-->
-<!--    <string name="front_ad_unit_for_test">ca-app-pub-3940256099942544/1033173712</string>-->
+<!--    <string name="admob_app_id">ca-app-pub-3081286779348377~5523985031</string>-->
+<!--    <string name="banner_ad_unit_id">ca-app-pub-3081286779348377/4288098440</string>-->
+<!--    <string name="banner_ad_unit_id_for_test">ca-app-pub-3081286779348377/4288098440</string>-->
+<!--    <string name="front_ad_unit">ca-app-pub-3081286779348377/7794370244</string>-->
+<!--    <string name="front_ad_unit_for_test">ca-app-pub-3081286779348377/7794370244</string>-->
 <!--    <string name="explain_digitalToAnalog">타이머가 진행 중인 상황에서 아날로그 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n또한 아날로그 시계 모드는 타이머 기록을 저장하지 않습니다.\n아날로그 시계 모드로 전환하시겠습니까?</string>-->
 <!--    <string name="explain_analongToDigital">타이머가 진행 중인 상황에서 디지털 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n디지털 시계 모드로 전환하시겠습니까?</string>-->
 <!--</resources>-->
+
+<!--테스트-->
+<resources>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="front_ad_unit">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="front_ad_unit_for_test">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="explain_digitalToAnalog">타이머가 진행 중인 상황에서 아날로그 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n또한 아날로그 시계 모드는 타이머 기록을 저장하지 않습니다.\n아날로그 시계 모드로 전환하시겠습니까?</string>
+    <string name="explain_analongToDigital">타이머가 진행 중인 상황에서 디지털 시계 모드로 변환할 시 현재 타이머 기록이 초기화됩니다.\n디지털 시계 모드로 전환하시겠습니까?</string>
+</resources>
