@@ -1,6 +1,12 @@
 package com.examtimer1.ui.total_timer;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.examtimer1.BroadCastD;
 import com.examtimer1.MainActivity;
 import com.examtimer1.OnBackPressedListener;
 import com.examtimer1.TotalTimer.TotalTimer_analogClock;
@@ -75,7 +82,33 @@ implements OnBackPressedListener {
             }
         });
 
+        setAlarm();
+
         return root;
+    }
+
+    public void setAlarm(){
+        AlarmManager am= (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        Intent intent=new Intent(TotalTimerFragment.this.getActivity(), BroadCastD.class);
+
+        PendingIntent sender= PendingIntent.getBroadcast(TotalTimerFragment.this.getActivity(), 0, intent, 0);
+
+        Calendar calendar=Calendar.getInstance();
+
+        calendar.set(Calendar.YEAR, 2020);
+        calendar.set(Calendar.MONTH, 11);
+        calendar.set(Calendar.DATE, 2);
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+//        calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE), calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE)+1, 0);
+//        Log.d(TAG, "현재 날짜, 시간: "+calendar.get(Calendar.YEAR)+"년 "+calendar.get(Calendar.MONTH)+"월 "+calendar.get(Calendar.DATE)+"일 "+calendar.get(Calendar.HOUR_OF_DAY)+"시 "+calendar.get(Calendar.MINUTE)+"분");
+//        Log.d(TAG, "calendar: "+calendar.toString());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            am.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
+        }
     }
 
     @Override

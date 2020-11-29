@@ -1,6 +1,14 @@
 package com.examtimer1;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.examtimer1.examtimer.R;
 import com.google.android.gms.ads.MobileAds;
@@ -14,14 +22,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     OnBackPressedListener listener;
+    private static final String CHANNEL_ID = "10001";
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "MainActivity 실행");
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_totalTimer, R.id.navigation_subjectTimer, R.id.navigation_record)
@@ -37,16 +54,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void setOnBackPressedListener(OnBackPressedListener listener){ this.listener = listener; }
+    public void setOnBackPressedListener(OnBackPressedListener listener) {
+        this.listener = listener;
+    }
 
 
     @Override
     public void onBackPressed() {
-        if(listener!=null){
+        if (listener != null) {
             listener.onBackPressed();
-        }
-        else{
+        } else {
             super.onBackPressed();
         }
     }
+
 }
