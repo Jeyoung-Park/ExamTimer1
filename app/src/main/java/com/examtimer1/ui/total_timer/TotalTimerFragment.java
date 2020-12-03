@@ -34,7 +34,7 @@ import java.util.Calendar;
 
 public class TotalTimerFragment extends Fragment
 implements OnBackPressedListener {
-    static final int SYEAR=2020, SMONTH=12, SDAY=3;
+    static final int SYEAR=2021, SMONTH=11, SDAY=18;
 
     private TotalTimerViewModel homeViewModel;
     private TextView TextView_Dday;
@@ -82,12 +82,12 @@ implements OnBackPressedListener {
             }
         });
 
-        setAlarm();
+//        setAlarm();
 
         return root;
     }
 
-    public void setAlarm(){
+  /*  public void setAlarm(){
         AlarmManager am= (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         Intent intent=new Intent(TotalTimerFragment.this.getActivity(), BroadCastD.class);
 
@@ -109,7 +109,7 @@ implements OnBackPressedListener {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             am.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
         }
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

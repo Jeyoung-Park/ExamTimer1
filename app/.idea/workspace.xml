@@ -15,17 +15,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/release/app-release.aab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/ui/total_timer/TotalTimerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/ui/total_timer/TotalTimerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/string.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/string.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/fragment_total_timer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/fragment_total_timer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/fragment_total_timer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/fragment_total_timer.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_XL_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -68,11 +67,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock.java_SELECTED" value="CustomAnalogClock" />
+    <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_math.java_SELECTED" value="CustomAnalogClock_math" />
     <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science.java_SELECTED" value="CustomAnalogClock_science" />
     <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science2.java_SELECTED" value="CustomAnalogClock_science2" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_math.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science2.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
