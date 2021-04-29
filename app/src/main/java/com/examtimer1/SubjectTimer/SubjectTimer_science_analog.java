@@ -103,7 +103,10 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
                                 if(choice==1) intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_history_analog.class);
                                 else if(choice==2) intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_science1_analog.class);
                                 else intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_science2_analog.class);
-                                if(choice!=0)   startActivity(intent);
+                                if(choice!=0)   {
+                                    startActivity(intent);
+                                    overridePendingTransition(0, 0); //애니메이션 없애기
+                                }
                             }
                         });
                 AlertDialog alertDialog=builder.create();
@@ -122,6 +125,7 @@ public class SubjectTimer_science_analog extends AppCompatActivity {
                         dialog.cancel();
                         Intent intent=new Intent(SubjectTimer_science_analog.this, SubjectTimer_science.class);
                         startActivity(intent);
+//                        overridePendingTransition(0, 0); //애니메이션 없애기
                     }
                 });
 
