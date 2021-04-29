@@ -233,26 +233,26 @@ public class CustomAnalogClock_science extends View {
         if(timeSpentInMinute==30&&second==0) {
             setTestEnd(true);
         }
-        else if(timeSpentInMinute>=40&&timeSpentInMinute<50) {
+        else if(timeSpentInMinute>=40&&timeSpentInMinute<55) {
             setCurrent_subject(2);
             setTestEnd(false);
         }
-        else if(timeSpentInMinute==50&&second==0) setBreakTimeEnd(true);
-        else if(timeSpentInMinute>=50&&timeSpentInMinute<80) {
+        else if(timeSpentInMinute==55&&second==0) setBreakTimeEnd(true);
+        else if(timeSpentInMinute>=55&&timeSpentInMinute<85) {
             setCurrent_subject(3);
             setBreakTimeEnd(false);
         }
-        else if(timeSpentInMinute==80&&second==0) setTestEnd(true);
-        else if(timeSpentInMinute>=80&&timeSpentInMinute<82) {
+        else if(timeSpentInMinute==85&&second==0) setTestEnd(true);
+        else if(timeSpentInMinute>=85&&timeSpentInMinute<87) {
             setCurrent_subject(4);
             setTestEnd(false);
         }
-        else if(timeSpentInMinute==82&&second==0) setBreakTimeEnd(true);
-        else if(timeSpentInMinute>=82&&timeSpentInMinute<102) {
+        else if(timeSpentInMinute==87&&second==0) setBreakTimeEnd(true);
+        else if(timeSpentInMinute>=87&&timeSpentInMinute<107) {
             setCurrent_subject(5);
             setBreakTimeEnd(false);
         }
-        else if(timeSpentInMinute==102&&second==0) setExamEnd(true);
+        else if(timeSpentInMinute==107&&second==0) setExamEnd(true);
 
 //        else if(timeSpentInMinute)
    /*     if(getCurrent_subject()==2&&(!isTimeSet[0])){

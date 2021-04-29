@@ -11,13 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a0415d-5994-4276-be66-090c0ee80c58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/release/app-release.aab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/examtimer1/ui/total_timer/TotalTimerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/examtimer1/ui/total_timer/TotalTimerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout-land/fragment_total_timer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-land/fragment_total_timer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout-port/fragment_total_timer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout-port/fragment_total_timer.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
     <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science.java_SELECTED" value="CustomAnalogClock_science" />
     <property name="android-custom-viewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science2.java_SELECTED" value="CustomAnalogClock_science2" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_math.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/user/MyGitHub/ExamTimer1/app/src/main/java/com/examtimer1/CustomAnalogClock_science.java_selected" value="Custom views" />
@@ -176,45 +173,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1605835273823">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1619696672402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="762" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605835273823" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602857739698">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602857739698" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1606471427029">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606471427029" />
-    <state width="1877" height="157" key="GridCell.Tab.0.bottom" timestamp="1605962999244">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605962999244" />
-    <state width="1877" height="157" key="GridCell.Tab.0.center" timestamp="1605962999244">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605962999244" />
-    <state width="1877" height="157" key="GridCell.Tab.0.left" timestamp="1605962999244">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605962999244" />
-    <state width="1877" height="157" key="GridCell.Tab.0.right" timestamp="1605962999244">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="157" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605962999244" />
-    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1602732912898">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602732912898" />
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606382724992">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1132" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606382724992" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1600837728792">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600837728792" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1619696672402" />
   </component>
 </project>

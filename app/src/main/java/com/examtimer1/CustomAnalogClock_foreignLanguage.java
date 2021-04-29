@@ -33,7 +33,7 @@ public class CustomAnalogClock_foreignLanguage extends View {
     private int mRadius = 0;
 
     private int start_hour=5;
-    private int start_minute=0;
+    private int start_minute=5;
     private int start_second=0;
     private int current_hour, current_minute;
     private Paint mPaint;

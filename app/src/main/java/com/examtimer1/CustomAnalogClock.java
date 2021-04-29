@@ -268,36 +268,36 @@ public class CustomAnalogClock extends View {
             setBreakTimeEnd(true);
         }
         else if(timeSpentInMinute==400&&second==0) setTestEnd(true);
-        else if(timeSpentInMinute>=400&&timeSpentInMinute<410){
-            setCurrent_subject(8); //한국사 쉬는 시간(10분)
+        else if(timeSpentInMinute>=400&&timeSpentInMinute<415){
+            setCurrent_subject(8); //한국사 쉬는 시간(15분)
             setTestEnd(true);
         }
-        else if(timeSpentInMinute==410&&second==0) setBreakTimeEnd(true);
-        else if(timeSpentInMinute==410&&timeSpentInMinute<440){
+        else if(timeSpentInMinute==415&&second==0) setBreakTimeEnd(true);
+        else if(timeSpentInMinute==415&&timeSpentInMinute<445){
             setCurrent_subject(9); //탐구 1(30분)
             setBreakTimeEnd(false);
         }
-        else if(timeSpentInMinute==440&&second==0) setTestEnd(true);
-        else if(timeSpentInMinute>=440&&timeSpentInMinute<442){
+        else if(timeSpentInMinute==445&&second==0) setTestEnd(true);
+        else if(timeSpentInMinute>=445&&timeSpentInMinute<447){
             setCurrent_subject(10); //탐구 시험지 교체
             setTestEnd(false);
         }
-        else if(timeSpentInMinute==442&&second==0) setBreakTimeEnd(true);
-        else if(timeSpentInMinute>=442&&timeSpentInMinute<472){
+        else if(timeSpentInMinute==447&&second==0) setBreakTimeEnd(true);
+        else if(timeSpentInMinute>=447&&timeSpentInMinute<477){
             setCurrent_subject(11); //탐구 2(30분)
             setBreakTimeEnd(true);
         }
-        else if(timeSpentInMinute==472&&second==0) setTestEnd(true);
-        else if(timeSpentInMinute>=472&&timeSpentInMinute<500){
+        else if(timeSpentInMinute==477&&second==0) setTestEnd(true);
+        else if(timeSpentInMinute>=477&&timeSpentInMinute<505){
             setCurrent_subject(12); //4교시 쉬는시간
             setTestEnd(false);
         }
-        else if(timeSpentInMinute==500&&second==0) setBreakTimeEnd(true);
-        else if(timeSpentInMinute>=500&&timeSpentInMinute<540){
+        else if(timeSpentInMinute==505&&second==0) setBreakTimeEnd(true);
+        else if(timeSpentInMinute>=505&&timeSpentInMinute<545){
             setCurrent_subject(13);
             setBreakTimeEnd(false);
         }
-        else if(timeSpentInMinute>=540) setExamEnd(true);
+        else if(timeSpentInMinute>=545) setExamEnd(true);
 
 //        else if(timeSpentInMinute)
    /*     if(getCurrent_subject()==2&&(!isTimeSet[0])){

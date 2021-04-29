@@ -33,7 +33,7 @@ public class CustomAnalogClock_science1 extends View {
     private int mRadius = 0;
 
     private int start_hour=3;
-    private int start_minute=30;
+    private int start_minute=35;
     private int start_second=0;
     private int current_hour, current_minute;
     private Paint mPaint;

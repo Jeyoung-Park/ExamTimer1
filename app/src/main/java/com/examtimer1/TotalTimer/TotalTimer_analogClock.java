@@ -109,12 +109,12 @@ public class TotalTimer_analogClock extends AppCompatActivity {
                                 else if(current_subject==5) TextView_analogClock_subject_name.setText("영어(70분)\n13:10~14:20");
                                 else if(current_subject==6) TextView_analogClock_subject_name.setText("쉬는 시간 (20분)\n14:20~14:40\n(14:50에 시험 시작)");
                                 else if(current_subject==7) TextView_analogClock_subject_name.setText("한국사(30분)\n14:50~15:20");
-                                else if(current_subject==8) TextView_analogClock_subject_name.setText("시험지 교체 시간 (10분)\n15:20~15:30");
-                                else if(current_subject==9) TextView_analogClock_subject_name.setText("탐구 영역 1(30분)\n15:30~16:00");
-                                else if(current_subject==10) TextView_analogClock_subject_name.setText("시험지 교체 시간 (2분)\n16:00~16:02");
-                                else if(current_subject==11) TextView_analogClock_subject_name.setText("탐구 영역 2(30분)\n16:02~16:32");
-                                else if(current_subject==12) TextView_analogClock_subject_name.setText("쉬는 시간 (18분)\n16:32~16:50\n(17:00에 시험 시작)");
-                                else if(current_subject==13) TextView_analogClock_subject_name.setText("제2외국어/한문(40분)\n17:00~17:40");
+                                else if(current_subject==8) TextView_analogClock_subject_name.setText("시험지 교체 시간 (15분)\n15:20~15:35");
+                                else if(current_subject==9) TextView_analogClock_subject_name.setText("탐구 영역 1(30분)\n15:35~16:05");
+                                else if(current_subject==10) TextView_analogClock_subject_name.setText("시험지 교체 시간 (2분)\n16:05~16:07");
+                                else if(current_subject==11) TextView_analogClock_subject_name.setText("탐구 영역 2(30분)\n16:07~16:37");
+                                else if(current_subject==12) TextView_analogClock_subject_name.setText("쉬는 시간 (18분)\n16:37~16:55\n(17:05에 시험 시작)");
+                                else if(current_subject==13) TextView_analogClock_subject_name.setText("제2외국어/한문(40분)\n17:05~17:45");
 
                                 if(analogClock.isTestEnd()) {
                                     Toast.makeText(TotalTimer_analogClock.this, "시험이 종료되었습니다.", Toast.LENGTH_SHORT).show();

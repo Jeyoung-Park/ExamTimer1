@@ -10,7 +10,7 @@
         android:id="@+id/TextView_analogClock_foreignLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="제2외국어/한문\n17:00~17:40"
+        android:text="제2외국어/한문\n17:05~17:45"
         android:textSize="30dp"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
