@@ -34,7 +34,7 @@ import java.util.Calendar;
 
 public class TotalTimerFragment extends Fragment
 implements OnBackPressedListener {
-    static final int SYEAR=2022, SMONTH=11, SDAY=17;
+    static final int SYEAR=2021, SMONTH=11, SDAY=18;
 
     private TotalTimerViewModel homeViewModel;
     private TextView TextView_Dday;
